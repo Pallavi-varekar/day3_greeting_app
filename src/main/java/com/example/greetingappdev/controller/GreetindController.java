@@ -21,5 +21,10 @@ public class GreetindController
     public String GreetingSayhello(@RequestBody Greeting  greeting){
         return greetingService.sayHello(greeting);
     }
+    @PostMapping(value ="/Hello" )//uc2
+    public String GreetinghelloTo(@RequestBody Greeting  greeting){
+        return greetingService.sayHello(greeting);
+    }
+
 
 }
