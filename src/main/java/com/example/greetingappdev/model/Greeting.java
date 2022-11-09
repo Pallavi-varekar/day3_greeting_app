@@ -12,6 +12,15 @@ public class Greeting {
 
     }
 
+    @Override
+    public String toString() {
+        return "Greeting{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", messages='" + messages + '\'' +
+                '}';
+    }
+
     public Greeting() {
     }
 
