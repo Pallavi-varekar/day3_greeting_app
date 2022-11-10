@@ -25,7 +25,7 @@ public class GreetingController
     public String GreetinghelloTo(@RequestBody Greeting  greeting){
         return greetingService.sayHello(greeting);
     }
-    @PostMapping(value = "/body")//uc4
+    @PostMapping(value = "/body")
     public Greeting greetingMessagessave(@RequestBody Greeting greeting){
         return greetingService.printMessages(greeting);
     }
