@@ -3,15 +3,15 @@ package com.example.greetingappdev.controller;
 import com.example.greetingappdev.model.Greeting;
 import com.example.greetingappdev.service1.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 
-public class GreetindController
+public class GreetingController
 {
-    //@Autowired
+    @Autowired
     GreetingService greetingService;
     @PostMapping(value = "/body")//uc1
     public String greetingMessages(@RequestBody Greeting greeting){
@@ -21,9 +21,17 @@ public class GreetindController
     public String GreetingSayhello(@RequestBody Greeting  greeting){
         return greetingService.sayHello(greeting);
     }
-    @PostMapping(value ="/Hello" )//uc2
+    @PostMapping(value ="/Hello" )//uc4
     public String GreetinghelloTo(@RequestBody Greeting  greeting){
         return greetingService.sayHello(greeting);
+    }
+    @PostMapping(value = "/body")//uc4
+    public Greeting greetingMessagessave(@RequestBody Greeting greeting){
+        return greetingService.printMessages(greeting);
+    }
+    @GetMapping("/getMessage/{id}")//uc5
+    public Optional<Greeting> findGreeting(@PathVariable int id){
+        return greetingService.findGreeting(id);
     }
 
 
