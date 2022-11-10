@@ -2,8 +2,10 @@ package com.example.greetingappdev.service1;
 
 import com.example.greetingappdev.model.Greeting;
 import com.example.greetingappdev.repo.greetingRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,7 +17,7 @@ public class GreetingService {
 
     }
      @Autowired
-    greetingRepository GreeetingRepository;
+    greetingRepository GreetingRepository;
     public Greeting printMessages(Greeting greeting){
 
         return greetingRepository.save(new Greeting(greeting.getId(),greeting.getName(),greeting.getMessages()));
@@ -24,5 +26,8 @@ public class GreetingService {
     }
     public Optional<Greeting> findGreeting(int id) {
         return greetingRepository.findById(id);
+    }
+    public List<Greeting> allGreeting() {
+        return greetingRepository.findAll();
     }
 }
