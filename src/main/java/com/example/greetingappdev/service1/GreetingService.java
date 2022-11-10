@@ -18,8 +18,8 @@ public class GreetingService {
     greetingRepository GreeetingRepository;
     public Greeting printMessages(Greeting greeting){
 
-
-        return greetingRepository.save(greeting);
+        return greetingRepository.save(new Greeting(greeting.getId(),greeting.getName(),greeting.getMessages()));
+      //  return greetingRepository.save(greeting);
 
     }
     public Optional<Greeting> findGreeting(int id) {
