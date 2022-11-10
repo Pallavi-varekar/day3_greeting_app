@@ -1,6 +1,14 @@
 package com.example.greetingappdev.model;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Greeting {
+    @Id
+    @GeneratedValue
     private String id;
     private String name;
     private String messages;
